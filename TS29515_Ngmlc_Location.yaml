@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: '1.0.3'
+  version: '1.1.0-alpha.3'
   title: Ngmlc_Location
   description: |
     Ngmlc_Location Service.
@@ -8,7 +8,7 @@ info:
     All rights reserved.
 
 externalDocs:
-  description: 3GPP TS 29.515 V16.4.0; 5G System; Gateway Mobile Location Services; Stage 3
+  description: 3GPP TS 29.515 V17.3.0; 5G System; Gateway Mobile Location Services; Stage 3
   url: 'http://www.3gpp.org/ftp/Specs/archive/29_series/29.515/'
 
 servers:
@@ -44,29 +44,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/LocationData'
         '307':
-          description: temporary redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '401':
@@ -105,29 +85,9 @@ paths:
                 '204':
                   description: Expected response to a valid notification
                 '307':
-                  description: temporary redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '401':
@@ -165,29 +125,9 @@ paths:
                 '204':
                   description: Expected response to a valid notification
                 '307':
-                  description: temporary redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '401':
@@ -228,29 +168,9 @@ paths:
         '204':
           description: Expected response to a successful cancellation
         '307':
-          description: temporary redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '401':
@@ -291,29 +211,9 @@ paths:
         '204':
           description: Expected response to successful location context transfer
         '307':
-          description: temporary redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '401':
@@ -354,29 +254,9 @@ paths:
         '204':
           description: Expected response to successful UE location information subscription
         '307':
-          description: temporary redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same GMLC or GMLC (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target GMLC (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '401':
@@ -415,29 +295,9 @@ paths:
                 '204':
                   description: Expected response to a valid notification
                 '307':
-                  description: temporary redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '401':
@@ -478,6 +338,7 @@ components:
 # COMPLEX TYPES
 #
     InputData:
+      description: Contains the input parameters in ProvideLocation service operation
       type: object
       required:
         - externalClientType
@@ -543,6 +404,7 @@ components:
 
 
     LocationData:
+      description: Contains the response parameters in ProvideLocation service operation
       type: object
       properties:
         gpsi:
@@ -553,8 +415,12 @@ components:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea'
         civicAddress:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress'
+        localLocationEstimate:
+          $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/LocalArea'
         ageOfLocationEstimate:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AgeOfLocationEstimate'
+        timestampOfLocationEstimate:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
         positioningDataList:
           type: array
           items:
@@ -579,7 +445,11 @@ components:
           $ref: 'TS29518_Namf_Location.yaml#/components/schemas/LocationPrivacyVerResult'
         successType:
           $ref: '#/components/schemas/SuccessType'
+        achievedQos:
+          $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/MinorLocationQoS'
+
     CancelLocData:
+      description: Contains the input parameters in CancelLocation service operation
       type: object
       required:
         - hgmlcCallBackUri
@@ -603,6 +473,7 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/AmfId'
 
     LocUpdateData:
+      description: Contains the input parameters in LocationUpdate service operation
       type: object
       required:
         - locationRequestType
@@ -615,12 +486,16 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/Gpsi'
         supi:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'
+        pseudonymIndicator:
+          $ref: '#/components/schemas/PseudonymIndicator'
         locationRequestType:
           $ref: '#/components/schemas/LocationRequestType'
         locationEstimate:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea'
         ageOfLocationEstimate:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AgeOfLocationEstimate'
+        timestampOfLocationEstimate:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
         accuracyFulfilmentIndicator:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AccuracyFulfilmentIndicator'
         civicAddress:
@@ -631,12 +506,14 @@ components:
           $ref: '#/components/schemas/ExternalClientIdentification'
         afId:
           type: string
-        hgmlcAddress:
-          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
-        serviceIdentity:
-          $ref: '#/components/schemas/ServiceIdentity'
+        gmlcNumber:
+          type: string
+          pattern: '^[0-9]{5,15}$'
+        lcsServiceType:
+          $ref: '#/components/schemas/LcsServiceTypeId'
 
     EventNotifyData:
+      description: Contains the input parameters for the target UE in EventNotify Notification service operation
       type: object
       required:
         - eventNotifyDataType
@@ -654,8 +531,12 @@ components:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea'
         civicAddress:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress'
+        localLocationEstimate:
+          $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/LocalArea'
         ageOfLocationEstimate:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AgeOfLocationEstimate'
+        timestampOfLocationEstimate:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
         positioningDataList:
           type: array
           items:
@@ -682,8 +563,11 @@ components:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AccuracyFulfilmentIndicator'
         failureCause:
           $ref: '#/components/schemas/FailureCause'
+        achievedQos:
+          $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/MinorLocationQoS'
 
     UePrivacyRequirements:
+      description: UE privacy requirements from (H)GMLC to the serving AMF or VGMLC(in the roaming case) for the target UE
       type: object
       properties:
         lcsServiceAuthInfo:
@@ -692,6 +576,7 @@ components:
           type: boolean
 
     LocUpdateNotification:
+      description: Location Update Notification
       type: object
       required:
         - locationRequestType
@@ -710,6 +595,8 @@ components:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea'
         ageOfLocationEstimate:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AgeOfLocationEstimate'
+        timestampOfLocationEstimate:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
         accuracyFulfilmentIndicator:
           $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AccuracyFulfilmentIndicator'
         civicAddress:
@@ -722,6 +609,7 @@ components:
           $ref: '#/components/schemas/ServiceIdentity'
 
     LocUpdateSubs:
+      description: UE location information subscription
       type: object
       required:
         - nfInstanceId
@@ -737,11 +625,13 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/Supi'
 
     EventNotifyDataExt:
+      description: Extended Event Notify Data for UEs of a target group
       allOf:
       - $ref: '#/components/schemas/EventNotifyData'
       - $ref: '#/components/schemas/EventNotifyDataAdditionalInfo'
 
     EventNotifyDataAdditionalInfo:
+      description: Additional information to Event Notify Data
       type: object
       properties:
         addEventDataList:
@@ -750,6 +640,7 @@ components:
             $ref: '#/components/schemas/EventNotifyData'
           minItems: 1
     AreaEventInfoAddition:
+      description: Additional information for Extended Area event information
       type: object
       properties:
         geoAreaList:
@@ -762,6 +653,7 @@ components:
           default: false
 
     AreaEventInfoExt:
+      description: Extended Area Event Information
       allOf:
         - $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/AreaEventInfo'
         - $ref: '#/components/schemas/AreaEventInfoAddition'
@@ -771,17 +663,27 @@ components:
 # SIMPLE TYPES
 #
     ServiceIdentity:
+      description: Contains the service identity
       type: string
     ExternalClientIdentification:
+      description: Contains the external client identification
       type: string
     CodeWord:
+      description: Contains the codeword
       type: string
     E164CountryCodeOfGeographicArea:
+      description: Contains the E.164 country codes for geographic areas
       type: string
+    LcsServiceTypeId:
+      description: LCS Service Type Id.
+      type: integer
+      minimum: 0
+      maximum: 127
 #
 # ENUMS
 #
     PseudonymIndicator:
+      description: It defines if a pseudonym is requested
       anyOf:
         - type: string
           enum:
@@ -789,6 +691,7 @@ components:
             - PSEUDONYM_NOT_REQUESTED
         - type: string
     LocationRequestType:
+      description: NI-LR, MT-LR or MO-LR
       anyOf:
         - type: string
           enum:
@@ -797,6 +700,7 @@ components:
             - MO_LR
         - type: string
     LocationTypeRequested:
+      description: Contains the location type requested by the LCS client
       anyOf:
         - type: string
           enum:
@@ -806,6 +710,7 @@ components:
             - NOTIFICATION_VERIFICATION_ONLY
         - type: string
     EventNotifyDataType:
+      description: Contains the type of event that triggers event notification
       anyOf:
         - type: string
           enum:
@@ -822,6 +727,7 @@ components:
             - 5GC_MT_LR
         - type: string
     FailureCause:
+      description: Positioning failure cause
       anyOf:
         - type: string
           enum:
@@ -832,6 +738,7 @@ components:
         - type: string
 
     SuccessType:
+      description: Success Type to indicate full or partial success
       anyOf:
         - type: string
           enum:

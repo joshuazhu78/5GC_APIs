@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-  version: '1.2.0-alpha.1'
+  version: '1.2.0-alpha.4'
   title: 'Nsmf_PDUSession'
   description: |
     SMF PDU Session Service.
@@ -9,7 +9,7 @@ info:
     All rights reserved.
 
 externalDocs:
-  description: 3GPP TS 29.502 V17.0.0; 5G System; Session Management Services; Stage 3
+  description: 3GPP TS 29.502 V17.3.0; 5G System; Session Management Services; Stage 3
   url: http://www.3gpp.org/ftp/Specs/archive/29_series/29.502/
 
 servers:
@@ -85,37 +85,9 @@ paths:
                 '204':
                   description: successful notification
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      required: true
-                      description: 'A URI pointing to the endpoint of another NF service consumer to which the notification should be sent'
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target NF (service) instance towards which the notification is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '403':
@@ -168,44 +140,16 @@ paths:
                 type: string
 
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set '
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           description: unsuccessful creation of an SM context - bad request
           content:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextCreateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -241,7 +185,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextCreateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -319,7 +263,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextCreateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -355,7 +299,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextCreateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -392,7 +336,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextCreateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -454,37 +398,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/SmContextRetrievedData'
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -601,44 +517,16 @@ paths:
         '204':
           description: successful update of an SM context without content in the response
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           description: unsuccessful update of an SM context - bad request
           content:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextUpdateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -674,7 +562,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextUpdateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -751,7 +639,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextUpdateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -787,7 +675,7 @@ paths:
             application/json: # message without binary body part
               schema:
                 $ref: '#/components/schemas/SmContextUpdateError'
-            application/problem+json: 
+            application/problem+json:
               schema:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
             multipart/related:  # message with binary body part(s)
@@ -869,37 +757,9 @@ paths:
         '204':
           description: successful release of an SM context without content in the response
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -960,37 +820,9 @@ paths:
         '204':
           description: successful sending of MO data
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: '#/components/responses/400'
         '401':
@@ -1068,37 +900,9 @@ paths:
                 '204':
                   description: successful notificationof the status change
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '403':
@@ -1132,37 +936,9 @@ paths:
                 '204':
                   description: successful notificationof the status change
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '403':
@@ -1200,37 +976,9 @@ paths:
                 '204':
                   description: successful update of a PDU session without content in the response
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: '#/components/responses/VsmfUpdateError'
                 '403':
@@ -1271,42 +1019,16 @@ paths:
                 '204':
                   description: successful update of a PDU session without content in the response
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: '#/components/responses/VsmfUpdateError'
                 '403':
                   $ref: '#/components/responses/VsmfUpdateError'
                 '404':
+                  $ref: '#/components/responses/VsmfUpdateError'
+                '409':
                   $ref: '#/components/responses/VsmfUpdateError'
                 '411':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/411'
@@ -1358,37 +1080,9 @@ paths:
                 '204':
                   description: successful transfering of MT data
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '401':
@@ -1451,37 +1145,9 @@ paths:
                 '204':
                   description: successful transfering of MT data
                 '307':
-                  description: temporary redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
                 '308':
-                  description: permanent redirect
-                  content:
-                    application/problem+json:
-                      schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-                  headers:
-                    Location:
-                      description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-                      required: true
-                      schema:
-                        type: string
-                    3gpp-Sbi-Target-Nf-Id:
-                      description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-                      schema:
-                        type: string
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '401':
@@ -1543,33 +1209,9 @@ paths:
               schema:
                 type: string
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: '#/components/responses/PduSessionCreateError'
         '403':
@@ -1720,37 +1362,9 @@ paths:
         '204':
           description: successful update of a PDU session without content in the response
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: '#/components/responses/HsmfUpdateError'
         '403':
@@ -1875,37 +1489,9 @@ paths:
         '204':
           description: successful release of a PDU session
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1955,37 +1541,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievedData'
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -2048,37 +1606,9 @@ paths:
         '204':
           description: successful transfering of MO data
         '307':
-          description: temporary redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
         '308':
-          description: permanent redirect
-          content:
-            application/problem+json:
-              schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
-          headers:
-            Location:
-              description: 'An alternative URI of the resource located on an alternative service instance within the same SMF or SMF (service) set'
-              required: true
-              schema:
-                type: string
-            3gpp-Sbi-Target-Nf-Id:
-              description: 'Identifier of target SMF (service) instance towards which the request is redirected'
-              schema:
-                type: string
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '401':
@@ -2301,6 +1831,35 @@ components:
           $ref: 'TS29510_Nnrf_NFManagement.yaml#/components/schemas/TngfInfo'
         twifInfo:
           $ref: 'TS29510_Nnrf_NFManagement.yaml#/components/schemas/TwifInfo'
+        ranUnchangedInd:
+          type: boolean
+        samePcfSelectionInd:
+          type: boolean
+          default: false
+        targetDnai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+        nrfManagementUri:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        nrfDiscoveryUri:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        nrfAccessTokenUri:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        smfBindingInfo:
+          type: string
+        pvsInfo:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PvsInfo'
+        oldPduSessionRef:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        smPolicyNotifyInd:
+          type: boolean
+          default: false
+        pcfUeCallbackInfo:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PcfUeCallbackInfo'
+        satelliteBackhaulCat:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'
+        upipSupported:
+          type: boolean
+          default: false
       required:
         - servingNfId
         - servingNetwork
@@ -2472,6 +2031,22 @@ components:
           minItems: 1
         ddnFailureSubs:
           $ref: '#/components/schemas/DdnFailureSubs'
+        skipN2PduSessionResRelInd:
+          type: boolean
+          default: false
+        secondaryRatUsageDataReportContainer:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecondaryRatUsageDataReportContainer'
+          minItems: 1
+        smPolicyNotifyInd:
+          type: boolean
+          enum:
+           - true
+        pcfUeCallbackInfo:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PcfUeCallbackInfo'
+        satelliteBackhaulCat:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'
 
     SmContextUpdatedData:
       description: Data within Update SM Context Response
@@ -2604,6 +2179,10 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
         altAnchorSmfId:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'
+        targetDnaiInfo:
+          $ref: '#/components/schemas/TargetDnaiInfo'
+        oldPduSessionRef:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
       required:
         - statusInfo
 
@@ -2756,6 +2335,22 @@ components:
           $ref: '#/components/schemas/UpSecurityInfo'
         vplmnQos:
           $ref: '#/components/schemas/VplmnQos'
+        oldSmContextRef:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        redundantPduSessionInfo:
+          $ref: '#/components/schemas/RedundantPduSessionInformation'
+        oldPduSessionRef:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        smPolicyNotifyInd:
+          type: boolean
+          default: false
+        pcfUeCallbackInfo:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PcfUeCallbackInfo'
+        satelliteBackhaulCat:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'
+        upipSupported:
+          type: boolean
+          default: false
       required:
         - dnn
         - servingNetwork
@@ -2859,6 +2454,8 @@ components:
           $ref: '#/components/schemas/IpAddress'
         redundantPduSessionInfo:
           $ref: '#/components/schemas/RedundantPduSessionInformation'
+        nspuSupportInd:
+          type: boolean
       required:
         - pduSessionType
         - sscMode
@@ -2917,6 +2514,7 @@ components:
           items:
             $ref: '#/components/schemas/PduSessionNotifyItem'
           minItems: 1
+# The attribute name does not follow the naming conventions specified in 3GPP TS 29.501. The attribute name is kept though as defined in the current specification for backward compatibility reason.
         epsBearerId:
           type: array
           items:
@@ -3011,6 +2609,23 @@ components:
           $ref: '#/components/schemas/SecurityResult'
         upSecurityInfo:
           $ref: '#/components/schemas/UpSecurityInfo'
+        amfNfId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'
+        guami:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Guami'
+        secondaryRatUsageDataReportContainer:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecondaryRatUsageDataReportContainer'
+          minItems: 1
+        smPolicyNotifyInd:
+          type: boolean
+          enum:
+           - true
+        pcfUeCallbackInfo:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PcfUeCallbackInfo'
+        satelliteBackhaulCat:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'
       required:
         - requestIndication
 
@@ -3181,6 +2796,8 @@ components:
           $ref: '#/components/schemas/N4Information'
         n4InfoExt2:
           $ref: '#/components/schemas/N4Information'
+        n4InfoExt3:
+          $ref: '#/components/schemas/N4Information'
         smallDataRateControlEnabled:
           type: boolean
         qosMonitoringInfo:
@@ -3255,6 +2872,8 @@ components:
           $ref: '#/components/schemas/N4Information'
         n4InfoExt2:
           $ref: '#/components/schemas/N4Information'
+        n4InfoExt3:
+          $ref: '#/components/schemas/N4Information'
 
     StatusNotification:
       description: Data within Notify Status Request
@@ -3266,6 +2885,10 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/SmallDataRateStatus'
         apnRateStatus:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/ApnRateStatus'
+        targetDnaiInfo:
+          $ref: '#/components/schemas/TargetDnaiInfo'
+        oldPduSessionRef:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
       required:
         - statusInfo
 
@@ -3302,6 +2925,8 @@ components:
           $ref: '#/components/schemas/QosFlowProfile'
         associatedAnType:
           $ref: '#/components/schemas/QosFlowAccessType'
+        defaultQosRuleInd:
+          type: boolean
       required:
         - qfi
         - qosRules
@@ -3425,6 +3050,9 @@ components:
           items:
             $ref: '#/components/schemas/EpsBearerId'
           minItems: 1
+        ranUnchangedInd:
+          type: boolean
+          default: false
 
     SmContextRetrievedData:
       description: Data within Retrieve SM Context Response
@@ -3441,6 +3069,8 @@ components:
         dlDataWaitingInd:
           type: boolean
           default: false
+        afCoordinationInfo:
+          $ref: '#/components/schemas/AfCoordinationInfo'
       required:
         - ueEpsPdnConnection
 
@@ -3452,6 +3082,9 @@ components:
           type: boolean
           default: false
         ethernetSupported:
+          type: boolean
+          default: false
+        upipSupported:
           type: boolean
           default: false
 
@@ -3614,7 +3247,7 @@ components:
       type: object
       properties:
         error:
-          $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+          $ref: '#/components/schemas/ExtProblemDetails'
         pti:
           $ref: '#/components/schemas/ProcedureTransactionId'
         n1smCause:
@@ -3640,6 +3273,8 @@ components:
         n4InfoExt1:
           $ref: '#/components/schemas/N4Information'
         n4InfoExt2:
+          $ref: '#/components/schemas/N4Information'
+        n4InfoExt3:
           $ref: '#/components/schemas/N4Information'
       required:
         - error
@@ -3746,6 +3381,26 @@ components:
           $ref: '#/components/schemas/IpAddress'
         redundantPduSessionInfo:
           $ref: '#/components/schemas/RedundantPduSessionInformation'
+        ranTunnelInfo:
+          $ref: '#/components/schemas/QosFlowTunnel'
+        addRanTunnelInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/QosFlowTunnel'
+          minItems: 1
+        redRanTunnelInfo:
+          $ref: '#/components/schemas/QosFlowTunnel'
+        addRedRanTunnelInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/QosFlowTunnel'
+          minItems: 1
+        nspuSupportInd:
+          type: boolean
+        smfBindingInfo:
+          type: string
+        satelliteBackhaulCat:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SatelliteBackhaulCategory'
       required:
         - pduSessionId
         - dnn
@@ -3896,7 +3551,7 @@ components:
     TransferMtDataError:
       description: Transfer MT Data Error Response
       allOf:
-      - $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+      - $ref: '#/components/schemas/ExtProblemDetails'
       - $ref: '#/components/schemas/TransferMtDataAddInfo'
 
     TransferMtDataAddInfo:
@@ -3959,6 +3614,8 @@ components:
         smallDataRateStatusReq:
           type: boolean
           default: false
+        pduSessionContextType:
+          $ref: '#/components/schemas/PduSessionContextType'
 
     RetrievedData:
       description: Data within Retrieve Response
@@ -3966,6 +3623,8 @@ components:
       properties:
         smallDataRateStatus:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/SmallDataRateStatus'
+        afCoordinationInfo:
+          $ref: '#/components/schemas/AfCoordinationInfo'
 
     SecurityResult:
       description: Security Result
@@ -4055,8 +3714,70 @@ components:
       properties:
         rsn:
           $ref: '#/components/schemas/Rsn'
+        pduSessionPairId:
+          type: integer
+          minimum: 0
+          maximum: 255
       required:
         - rsn
+
+    QosFlowTunnel:
+      description: Tunnel Information per QoS Flow
+      type: object
+      properties:
+        qfiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Qfi'
+          minItems: 1
+        tunnelInfo:
+          $ref: '#/components/schemas/TunnelInfo'
+      required:
+        - qfiList
+        - tunnelInfo
+
+    TargetDnaiInfo:
+      description: Target DNAI Information
+      type: object
+      properties:
+        targetDnai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+        smfSelectionType:
+          $ref: '#/components/schemas/SmfSelectionType'
+      required:
+        - targetDnai
+        - smfSelectionType
+
+    AfCoordinationInfo:
+      description: AF Coordination Information
+      type: object
+      properties:
+        sourceDnai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+        sourceUeIpv4Addr:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Ipv4Addr'
+        sourceUeIpv6Prefix:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Ipv6Prefix'
+        notificationInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotificationInfo'
+          minItems: 1
+
+    NotificationInfo:
+      description: Notification Correlation ID and Notification URI provided by the NF service consumer
+      type: object
+      properties:
+        notifId:
+          type: string
+        notifUri:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
+        upBufferInd:
+          type: boolean
+          default: false
+      required:
+        - notifId
+        - notifUri
 
 #
 # SIMPLE DATA TYPES
@@ -4106,6 +3827,11 @@ components:
     ForwardingBearerContainer:
       description: Forwarding Bearer Container
       type: string
+
+    SecondaryRatUsageDataReportContainer:
+      description: Secondary Rat Usage Data Report Container
+      type: string
+      format: byte
 
 #
 # ENUMERATIONS
@@ -4249,6 +3975,9 @@ components:
           - DDN_FAILURE_STATUS
           - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE
           - NOT_SUPPORTED_WITH_ISMF
+          - CHANGED_ANCHOR_SMF
+          - CHANGED_INTERMEDIATE_SMF
+          - TARGET_DNAI_NOTIFICATION
       - type: string
         description: >
           This string provides forward-compatibility with future
@@ -4281,6 +4010,9 @@ components:
         - DDN_FAILURE_STATUS
         - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE
         - NOT_SUPPORTED_WITH_ISMF
+        - CHANGED_ANCHOR_SMF
+        - CHANGED_INTERMEDIATE_SMF
+        - TARGET_DNAI_NOTIFICATION
 
     ResourceStatus:
       anyOf:
@@ -4438,6 +4170,7 @@ components:
         enum:
           - EPS_PDN_CONNECTION
           - SM_CONTEXT
+          - AF_COORDINATION_INFO
       - type: string
         description: >
           This string provides forward-compatibility with future
@@ -4447,6 +4180,7 @@ components:
         Type of SM Context information. Possible values are
           - EPS_PDN_CONNECTION
           - SM_CONTEXT
+          - AF_COORDINATION_INFO
 
     PsaIndication:
       anyOf:
@@ -4454,6 +4188,8 @@ components:
         enum:
           - PSA_INSERTED
           - PSA_REMOVED
+          - PSA_INSERTED_ONLY
+          - PSA_REMOVED_ONLY
       - type: string
         description: >
           This string provides forward-compatibility with future
@@ -4463,6 +4199,8 @@ components:
         Indication of whether a PSA is inserted or removed. Possible values are
           - PSA_INSERTED
           - PSA_REMOVED
+          - PSA_INSERTED_ONLY
+          - PSA_REMOVED_ONLY
 
     N4MessageType:
       anyOf:
@@ -4568,6 +4306,7 @@ components:
         enum:
           - V1
           - V2
+          - NONE
       - type: string
         description: >
           This string provides forward-compatibility with future
@@ -4577,8 +4316,37 @@ components:
         Redundancy Sequence Number. Possible values are
           - V1
           - V2
+          - NONE
 
+    SmfSelectionType:
+      anyOf:
+      - type: string
+        enum:
+          - CURRENT_PDU_SESSION
+          - NEXT_PDU_SESSION
+      - type: string
+        description: >
+          This string provides forward-compatibility with future
+          extensions to the enumeration but is not used to encode
+          content defined in the present version of this API.
+      description: >
+        Smf Selection Type. Possible values are
+          - CURRENT_PDU_SESSION
+          - NEXT_PDU_SESSION
 
+    PduSessionContextType:
+      anyOf:
+      - type: string
+        enum:
+          - AF_COORDINATION_INFO
+      - type: string
+        description: >
+          This string provides forward-compatibility with future
+          extensions to the enumeration but is not used to encode
+          content defined in the present version of this API.
+      description: >
+        Type of PDU Session information. Possible values are
+          - AF_COORDINATION_INFO
 #
 # HTTP request bodies
 #
@@ -4587,13 +4355,13 @@ components:
       description: representation of updates to apply to the PDU session
       required: true
       content:
-        application/+json: # message without binary body part
+        application/json:   # message without binary body part
           schema:
             $ref: '#/components/schemas/VsmfUpdateData'
         multipart/related:  # message with binary body part(s)
           schema:
             type: object
-            properties: # Request parts
+            properties:     # Request parts
               jsonData:
                 $ref: '#/components/schemas/VsmfUpdateData'
               binaryDataN1SmInfoToUe:
@@ -4606,6 +4374,9 @@ components:
                 type: string
                 format: binary
               binaryDataN4InformationExt2:
+                type: string
+                format: binary
+              binaryDataN4InformationExt3:
                 type: string
                 format: binary
           encoding:
@@ -4630,6 +4401,12 @@ components:
                   schema:
                     type: string
             binaryDataN4InformationExt2:
+              contentType:  application/vnd.3gpp.pfcp
+              headers:
+                Content-Id:
+                  schema:
+                    type: string
+            binaryDataN4InformationExt3:
               contentType:  application/vnd.3gpp.pfcp
               headers:
                 Content-Id:
@@ -4675,6 +4452,9 @@ components:
               binaryDataN4InformationExt2:
                 type: string
                 format: binary
+              binaryDataN4InformationExt3:
+                type: string
+                format: binary
           encoding:
             jsonData:
               contentType:  application/json
@@ -4708,6 +4488,12 @@ components:
                 Content-Id:
                   schema:
                     type: string
+            binaryDataN4InformationExt3:
+              contentType:  application/vnd.3gpp.pfcp
+              headers:
+                Content-Id:
+                  schema:
+                    type: string
 
     'PduSessionCreateError':
       description: unsuccessful creation of a PDU session
@@ -4715,7 +4501,7 @@ components:
         application/json: # message without binary body part
           schema:
             $ref: '#/components/schemas/PduSessionCreateError'
-        application/problem+json: 
+        application/problem+json:
           schema:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
         multipart/related:  # message with binary body part(s)
@@ -4743,7 +4529,7 @@ components:
         application/json: # message without binary body part
           schema:
             $ref: '#/components/schemas/HsmfUpdateError'
-        application/problem+json: 
+        application/problem+json:
           schema:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
         multipart/related:  # message with binary body part(s)
@@ -4771,7 +4557,7 @@ components:
         application/json: # message without binary body part
           schema:
             $ref: '#/components/schemas/VsmfUpdateError'
-        application/problem+json: 
+        application/problem+json:
           schema:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
         multipart/related:  # message with binary body part(s)
@@ -4793,6 +4579,9 @@ components:
                 type: string
                 format: binary
               binaryDataN4InformationExt2:
+                type: string
+                format: binary
+              binaryDataN4InformationExt3:
                 type: string
                 format: binary
           encoding:
@@ -4823,6 +4612,12 @@ components:
                   schema:
                     type: string
             binaryDataN4InformationExt2:
+              contentType:  application/vnd.3gpp.pfcp
+              headers:
+                Content-Id:
+                  schema:
+                    type: string
+            binaryDataN4InformationExt3:
               contentType:  application/vnd.3gpp.pfcp
               headers:
                 Content-Id:

@@ -1,15 +1,15 @@
 openapi: 3.0.0
 
 info:
-  version: '1.0.2'
+  version: '1.1.0-alpha.2'
   title: 'Nhss_imsSDM'
   description: |
     Nhss Subscriber Data Management Service for IMS.
-    © 2020, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
     All rights reserved.
 
 externalDocs:
-  description: 3GPP TS 29.562 HSS Services for interworking with IMS, version 16.3.0
+  description: 3GPP TS 29.562 HSS Services for interworking with IMS, version 17.3.0
   url: 'http://www.3gpp.org/ftp/Specs/archive/29_series/29.562/'
 
 servers:
@@ -57,6 +57,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImsRegistrationStatus'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -90,6 +94,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: dataset-names
+          in: query
+          description: Datasets to be retrieved
+          schema:
+            $ref: '#/components/schemas/DataSetNames'
       responses:
         '200':
           description: Expected response to a valid request
@@ -97,6 +106,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImsProfileData'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -142,6 +155,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PriorityLevels'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -175,6 +192,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: application-server-name
+          in: query
+          description: SIP URI of the Application Server Name
+          schema:
+             $ref: '#/components/schemas/SipServerName'
         - name: supported-features
           in: query
           description: Supported Features
@@ -187,6 +209,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Ifcs'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -232,6 +258,55 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceLevelTraceInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
+        '404':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/404'
+        '405':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/405'
+        '500':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/500'
+        '503':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/503'
+        '504':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/504'
+        default:
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
+
+  /{imsUeId}/ims-data/profile-data/charging-info:
+    get:
+      summary: Retrieve the charging information for to the user
+      operationId: GetChargingInfo
+      tags:
+        - Charging Info Retrieval
+      security:
+        - {}
+        - oAuth2ClientCredentials:
+          - nhss-ims-sdm
+        - oAuth2ClientCredentials:
+          - nhss-ims-sdm
+          - nhss-ims-sdm:charging-info:read
+      parameters:
+        - name: imsUeId
+          in: path
+          description: IMS Identity
+          required: true
+          schema:
+            $ref: '#/components/schemas/ImsUeId'
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChargingInfo'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -277,6 +352,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImsLocationData'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -317,6 +396,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ScscfCapabilityList'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -357,6 +440,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ScscfSelectionAssistanceInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -393,8 +480,12 @@ paths:
         - name: requested-nodes
           in: query
           description: Indicates the serving node(s) for which the request is applicable.
+          style: form
+          explode: false
           schema:
-            type: boolean
+            type: array
+            items:
+              $ref: '#/components/schemas/RequestedNode'
         - name: serving-node
           in: query
           description: Indicates that only the stored NF id/address of the serving node(s) is required
@@ -420,6 +511,11 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -427,6 +523,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PsLocation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -460,17 +560,17 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
-        - name: servingNode
+        - name: serving-node
           in: query
           description: Indicates that only the stored NF id/address of the serving node(s) is required
           schema:
             $ref: '#/components/schemas/ServingNode'
-        - name: localTime
+        - name: local-time
           in: query
           description: Indicates that only the Local Time Zone information of the location in the visited network where the UE is attached is requested
           schema:
             $ref: '#/components/schemas/LocalTime'
-        - name: currentLocation
+        - name: current-location
           in: query
           description: Indicates whether an active location retrieval has to be initiated by the requested node
           schema:
@@ -480,6 +580,11 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -487,6 +592,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CsLocation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -552,6 +661,10 @@ paths:
                 $ref: '#/components/schemas/RepositoryData'
         '204':
           description: No content
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -596,6 +709,10 @@ paths:
       responses:
         '204':
           description: Expected response to a valid request
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -621,6 +738,11 @@ paths:
           - nhss-ims-sdm
           - nhss-ims-sdm:repository-data:read
       parameters:
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
         - name: imsUeId
           in: path
           description: IMS Identity
@@ -640,6 +762,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RepositoryData'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -673,7 +799,7 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
-        - name: privateId
+        - name: private-id
           in: query
           description: Private identity
           schema:
@@ -685,6 +811,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MsisdnList'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -725,6 +855,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImsAssociatedIdentities'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -758,6 +892,16 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: impi
+          in: query
+          description: Private Identity of type IMPI
+          schema:
+             $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -765,6 +909,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrivateIdentities'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '403':
           $ref: 'TS29571_CommonData.yaml#/components/responses/403'
         '404':
@@ -797,6 +945,11 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -804,6 +957,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SrvccData'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -841,6 +998,11 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       requestBody:
         content:
           application/json-patch+json:
@@ -859,6 +1021,10 @@ paths:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '403':
           $ref: 'TS29571_CommonData.yaml#/components/responses/403'
         '404':
@@ -898,6 +1064,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PsiActivationState'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -953,6 +1123,10 @@ paths:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '403':
           $ref: 'TS29571_CommonData.yaml#/components/responses/403'
         '404':
@@ -986,6 +1160,11 @@ paths:
           required: true
           schema:
              $ref: '#/components/schemas/SipServerName'
+        - name: dsai-tag
+          in: query
+          description: The requested instance of Dynamic Service Activation Info
+          schema:
+             type: string
         - name: supported-features
           in: query
           description: Supported Features
@@ -998,6 +1177,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DsaiTagInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1053,6 +1236,10 @@ paths:
                 $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '403':
           $ref: 'TS29571_CommonData.yaml#/components/responses/403'
         '404':
@@ -1080,6 +1267,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       requestBody:
         content:
           application/json:
@@ -1107,6 +1299,10 @@ paths:
                 $ref: '#/components/schemas/SmsRegistrationInfo'
         '204':
           description: No content
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1142,9 +1338,18 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '204':
           description: Expected response to a valid request
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1176,6 +1381,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1183,6 +1393,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SmsRegistrationInfo'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1216,6 +1430,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1223,6 +1442,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImeiSvInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1263,6 +1486,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IpAddress'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1296,6 +1523,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1303,6 +1535,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TadsInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1336,6 +1572,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       requestBody:
         content:
           application/json:
@@ -1355,6 +1596,10 @@ paths:
               required: true
               schema:
                 type: string
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1380,6 +1625,10 @@ paths:
               responses:
                 '204':
                   description: Successful Notification response
+                '307':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+                '308':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '404':
@@ -1417,9 +1666,18 @@ paths:
           required: true
           schema:
             type: string
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1455,6 +1713,16 @@ paths:
           required: true
           schema:
             type: string
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
       requestBody:
         content:
           application/json-patch+json:
@@ -1470,9 +1738,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdatedUeReachabilitySubscription'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
         '204':
           description: Successful modification
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1506,11 +1778,21 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
-        - name: requestedNodes
+        - name: requested-nodes
           in: query
           description: Indicates the serving node(s) for which the request is applicable.
+          style: form
+          explode: false
           schema:
-            $ref: '#/components/schemas/RequestedNodes'
+            type: array
+            items:
+              $ref: '#/components/schemas/RequestedNode'
+            minItems: 1
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1518,6 +1800,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PsUserState'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1551,6 +1837,11 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/ImsUeId'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1558,6 +1849,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CsUserState'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1601,6 +1896,16 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
+        - name: call-reference-info
+          in: query
+          description: Indicates Call-Reference Number and AS-Number
+          schema:
+            $ref: '#/components/schemas/CallReferenceInfo'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1608,6 +1913,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Csrn'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1646,6 +1955,11 @@ paths:
           description: Supported Features
           schema:
              $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
+        - name: private-identity
+          in: query
+          description: IMS Private Identity
+          schema:
+            $ref: '#/components/schemas/PrivateId'
       responses:
         '200':
           description: Expected response to a valid request
@@ -1653,6 +1967,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReferenceLocationInformation'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         '405':
@@ -1669,7 +1987,7 @@ paths:
   /{imsUeId}/subscriptions:
     post:
       summary: subscribe to notifications
-      operationId: ImdSdmSubscribe
+      operationId: ImsSdmSubscribe
       tags:
         - SDM Subscription Creation
       security:
@@ -1705,6 +2023,10 @@ paths:
               required: true
               schema:
                 type: string
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1716,7 +2038,7 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
       callbacks:
         datachangeNotification:
           '{request.body#/callbackReference}':
@@ -1730,6 +2052,10 @@ paths:
               responses:
                 '204':
                   description: Successful Notification response
+                '307':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+                '308':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '404':
@@ -1739,7 +2065,7 @@ paths:
                 '503':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/503'
                 default:
-                  description: Unexpected error
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/default'
 
   /{imsUeId}/subscriptions/{subscriptionId}:
     delete:
@@ -1770,6 +2096,10 @@ paths:
       responses:
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1779,7 +2109,7 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
     patch:
       summary: modify the subscription
       operationId: ImsSdmSubsModify
@@ -1805,6 +2135,11 @@ paths:
           required: true
           schema:
             type: string
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
       requestBody:
         content:
           application/json-patch+json:
@@ -1820,9 +2155,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ImsSdmSubscription'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
         '204':
           description: Successful modification
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1834,7 +2173,7 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
 
   /shared-data-subscriptions:
     post:
@@ -1868,12 +2207,16 @@ paths:
               required: true
               schema:
                 type: string
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
           $ref: 'TS29571_CommonData.yaml#/components/responses/404'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
       callbacks:
         datachangeNotification:
           '{request.body#/callbackReference}':
@@ -1887,6 +2230,10 @@ paths:
               responses:
                 '204':
                   description: Successful Notification response
+                '307':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+                '308':
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/308'
                 '400':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/400'
                 '404':
@@ -1896,7 +2243,7 @@ paths:
                 '503':
                   $ref: 'TS29571_CommonData.yaml#/components/responses/503'
                 default:
-                  description: Unexpected error
+                  $ref: 'TS29571_CommonData.yaml#/components/responses/default'
 
   /shared-data-subscriptions/{subscriptionId}:
     delete:
@@ -1921,6 +2268,10 @@ paths:
       responses:
         '204':
           description: Successful response
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -1930,7 +2281,7 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
     patch:
       summary: modify the subscription
       operationId: ModifySharedDataSubs
@@ -1950,6 +2301,11 @@ paths:
           required: true
           schema:
             type: string
+        - name: supported-features
+          in: query
+          description: Supported Features
+          schema:
+             $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
       requestBody:
         content:
           application/json-patch+json:
@@ -1965,7 +2321,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ImsSdmSubscription'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/PatchResult'
+        '204':
+          description: Successful modification
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '403':
@@ -1977,7 +2339,7 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
 
   /shared-data:
     get:
@@ -2013,6 +2375,10 @@ paths:
                 items:
                   $ref: '#/components/schemas/SharedData'
                 minItems: 1
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
         '400':
           $ref: 'TS29571_CommonData.yaml#/components/responses/400'
         '404':
@@ -2022,7 +2388,62 @@ paths:
         '503':
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
-          description: Unexpected error
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
+
+  /{imsUeId}/repository-data:
+    get:
+      summary: Retrieve the repository data associated to an IMPU and service indication list
+      operationId: GetRepositoryDataServIndList
+      tags:
+        - Repository data list
+      security:
+        - {}
+        - oAuth2ClientCredentials:
+          - nhss-ims-sdm
+        - oAuth2ClientCredentials:
+          - nhss-ims-sdm
+          - nhss-ims-sdm:repository-data:read
+      parameters:
+        - name: imsUeId
+          in: path
+          description: IMS Identity
+          required: true
+          schema:
+            $ref: '#/components/schemas/ImsUeId'
+        - name: serviceIndicationList
+          in: query
+          description: Identifiers of a services related data
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ServiceIndication'
+            minItems: 1
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RepositoryDataList'
+        '307':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/307'
+        '308':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/308'
+        '400':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/400'
+        '404':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/404'
+        '405':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/405'
+        '500':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/500'
+        '503':
+          $ref: 'TS29571_CommonData.yaml#/components/responses/503'
+        default:
+          $ref: 'TS29571_CommonData.yaml#/components/responses/default'
 
 components:
 
@@ -2067,6 +2488,7 @@ components:
             nhss-ims-sdm:shared-subscriptions:create: Access to create a Shared-Data Subscriptions resource
             nhss-ims-sdm:shared-subscription:modify: Access to update/delete a Shared-Data Subscription resource
             nhss-ims-sdm:shared-data:read: Access to read the Shared-Data resource
+            nhss-ims-sdm:charging-info:read: Access to read the ChargingInfo resource
 
   schemas:
 
@@ -2152,7 +2574,7 @@ components:
         irsIsDefault:
           type: boolean
         aliasGroupId:
-          type: integer
+          type: string
 
     PrivateIdentity:
       type: object
@@ -2332,16 +2754,6 @@ components:
         scscfName:
           type: string
 
-    RequestedNodes:
-      type: array
-      minItems: 1
-      uniqueItems: true
-      items:
-        type: object
-        properties:
-          requestedNode:
-            $ref: '#/components/schemas/RequestedNode'
-
     PsLocation:
       type: object
       oneOf:
@@ -2413,7 +2825,7 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'
         amfLocation:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/NrLocation'
-        SmsfAddress:
+        smsfAddress:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'
         timeZone:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/TimeZone'
@@ -2520,6 +2932,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ImsServiceProfile'
+        chargingInfo:
+          $ref: '#/components/schemas/ChargingInfo'
+        serviceLevelTraceInfo:
+          $ref: '#/components/schemas/ServiceLevelTraceInformation'
+        servicePriorityLevelList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NameSpacePriority'
+          minItems: 1
+          uniqueItems: true
         supportedFeatures:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
         maxAllowedSimulReg:
@@ -2617,14 +3039,6 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/Uri'
 
     CreatedUeReachabilitySubscription:
-      type: object
-      required:
-       - expiry
-      properties:
-        expiry:
-          $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
-
-    UpdatedUeReachabilitySubscription:
       type: object
       required:
        - expiry
@@ -2751,6 +3165,54 @@ components:
       anyOf:
        - required: [scscfCapabilityList]
        - required: [scscfNames]
+
+    ChargingInfo:
+      type: object
+      anyOf:
+        - required:
+          - primaryEventChargingFunctionName
+        - required:
+          - primaryChargingCollectionFunctionName
+      properties:
+        primaryEventChargingFunctionName:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
+        secondaryEventChargingFunctionName:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
+        primaryChargingCollectionFunctionName:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
+        secondaryChargingCollectionFunctionName:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
+
+    CallReferenceInfo:
+      type: object
+      required:
+        - callRefNumber
+        - asNumber
+      properties:
+        callRefNumber:
+          type: string
+          format: byte
+        asNumber:
+          type: string
+
+    DataSetNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataSetName'
+      minItems: 1
+      uniqueItems: true
+
+    RepositoryDataList:
+      description: List of Repository Data for the requested Service Indications
+      type: object
+      required:
+        - repositoryDataMap
+      properties:
+        repositoryDataMap:
+          description: A map (list of key-value pairs where ServiceIndication serves as key) of RepositoryData
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/RepositoryData'
 
 # SIMPLE TYPES:
 
@@ -2958,4 +3420,14 @@ components:
           - NETWORK_DETERMINED_NOT_REACHABLE
           - ASSUMED_IDLE
           - NOT_PROVIDED_FROM_VLR
+        - type: string
+
+    DataSetName:
+      anyOf:
+        - type: string
+          enum:
+          - CHARGING_DATA
+          - IFC_DATA
+          - TRACE_DATA
+          - PRIORITY_DATA
         - type: string

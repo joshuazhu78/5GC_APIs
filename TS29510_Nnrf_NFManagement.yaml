@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 info:
-  version: '1.2.0-alpha.2'
+  version: '1.2.0-alpha.5'
   title: 'NRF NFManagement Service'
   description: |
     NRF NFManagement Service.
@@ -9,7 +9,7 @@ info:
     All rights reserved.
 
 externalDocs:
-  description: 3GPP TS 29.510 V17.1.0; 5G System; Network Function Repository Services; Stage 3
+  description: 3GPP TS 29.510 V17.4.0; 5G System; Network Function Repository Services; Stage 3
   url: 'http://www.3gpp.org/ftp/Specs/archive/29_series/29.510/'
 
 servers:
@@ -73,9 +73,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -85,9 +85,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -147,9 +147,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -159,9 +159,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -221,9 +221,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -233,9 +233,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -343,9 +343,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -355,9 +355,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -454,9 +454,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -466,9 +466,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -519,9 +519,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -531,9 +531,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -607,9 +607,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -619,9 +619,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -679,9 +679,9 @@ paths:
                 '307':
                   description: Temporary Redirect
                   content:
-                    application/problem+json:
+                    application/json:
                       schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                        $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
                   headers:
                     Location:
                       description: 'The URI pointing to the resource located on another NF service consumer instance'
@@ -691,9 +691,9 @@ paths:
                 '308':
                   description: Permanent Redirect
                   content:
-                    application/problem+json:
+                    application/json:
                       schema:
-                        $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                        $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
                   headers:
                     Location:
                       description: 'The URI pointing to the resource located on another NF service consumer instance'
@@ -782,9 +782,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -794,9 +794,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -844,9 +844,9 @@ paths:
         '307':
           description: Temporary Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -856,9 +856,9 @@ paths:
         '308':
           description: Permanent Redirect
           content:
-            application/problem+json:
+            application/json:
               schema:
-                $ref: 'TS29571_CommonData.yaml#/components/schemas/ProblemDetails'
+                $ref: 'TS29571_CommonData.yaml#/components/schemas/RedirectResponse'
           headers:
             Location:
               description: 'The URI pointing to the resource located on the redirect target NRF'
@@ -889,7 +889,9 @@ paths:
           $ref: 'TS29571_CommonData.yaml#/components/responses/503'
         default:
           $ref: 'TS29571_CommonData.yaml#/components/responses/default'
+
 components:
+
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2
@@ -898,7 +900,9 @@ components:
           tokenUrl: '/oauth2/token'
           scopes:
             nnrf-nfm: Access to the Nnrf_NFManagement API
+
   schemas:
+
     NFProfile:
       description: Information of an NF Instance registered in the NRF
       type: object
@@ -919,6 +923,11 @@ components:
           $ref: '#/components/schemas/NFType'
         nfStatus:
           $ref: '#/components/schemas/NFStatus'
+        collocatedNfInstances:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollocatedNfInstance'
+          minimum: 1
         heartBeatTimer:
           type: integer
           minimum: 1
@@ -1005,6 +1014,7 @@ components:
         udrInfo:
           $ref: '#/components/schemas/UdrInfo'
         udrInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of UdrInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/UdrInfo'
@@ -1012,6 +1022,7 @@ components:
         udmInfo:
           $ref: '#/components/schemas/UdmInfo'
         udmInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of UdmInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/UdmInfo'
@@ -1019,6 +1030,7 @@ components:
         ausfInfo:
           $ref: '#/components/schemas/AusfInfo'
         ausfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of AusfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/AusfInfo'
@@ -1026,6 +1038,7 @@ components:
         amfInfo:
           $ref: '#/components/schemas/AmfInfo'
         amfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of AmfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/AmfInfo'
@@ -1033,6 +1046,7 @@ components:
         smfInfo:
           $ref: '#/components/schemas/SmfInfo'
         smfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of SmfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/SmfInfo'
@@ -1040,6 +1054,7 @@ components:
         upfInfo:
           $ref: '#/components/schemas/UpfInfo'
         upfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of UpfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/UpfInfo'
@@ -1047,6 +1062,7 @@ components:
         pcfInfo:
           $ref: '#/components/schemas/PcfInfo'
         pcfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of PcfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/PcfInfo'
@@ -1054,6 +1070,7 @@ components:
         bsfInfo:
           $ref: '#/components/schemas/BsfInfo'
         bsfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of BsfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/BsfInfo'
@@ -1061,6 +1078,7 @@ components:
         chfInfo:
           $ref: '#/components/schemas/ChfInfo'
         chfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of ChfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/ChfInfo'
@@ -1072,18 +1090,27 @@ components:
         udsfInfo:
           $ref: '#/components/schemas/UdsfInfo'
         udsfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of UdsfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/UdsfInfo'
           minProperties: 1
         nwdafInfo:
           $ref: '#/components/schemas/NwdafInfo'
+        nwdafInfoList:
+          type: object
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/NwdafInfo'
+          minProperties: 1
         pcscfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of PcscfInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/PcscfInfo'
           minProperties: 1
         hssInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of HssInfo
           type: object
           additionalProperties:
             $ref: '#/components/schemas/HssInfo'
@@ -1102,6 +1129,7 @@ components:
             $ref: '#/components/schemas/NFService'
           minItems: 1
         nfServiceList:
+          description: A map (list of key-value pairs) where serviceInstanceId serves as key of NFService
           type: object
           additionalProperties:
             $ref: '#/components/schemas/NFService'
@@ -1139,11 +1167,13 @@ components:
           type: boolean
           default: false
         nfSetRecoveryTimeList:
+          description: A map (list of key-value pairs) where NfSetId serves as key of DateTime
           type: object
           additionalProperties:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
           minProperties: 1
         serviceSetRecoveryTimeList:
+          description: A map (list of key-value pairs) where NfServiceSetId serves as key of DateTime
           type: object
           additionalProperties:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/DateTime'
@@ -1166,13 +1196,52 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/VendorSpecificFeature'
+            minItems: 1
           minProperties: 1
         aanfInfoList:
           type: object
-          description: A map(list of key-value pairs) where a valid JSON string serves as key
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
           additionalProperties:
             $ref: '#/components/schemas/AanfInfo'
           minProperties: 1
+        5gDdnmfInfo:
+          $ref: '#/components/schemas/5GDdnmfInfo'
+        mfafInfo:
+          $ref: '#/components/schemas/MfafInfo'
+        easdfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/EasdfInfo'
+          minProperties: 1
+        dccfInfo:
+          $ref: '#/components/schemas/DccfInfo'
+        nsacfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of nsacfInfo
+          type: object
+          additionalProperties:
+            $ref: 'TS29510_Nnrf_NFManagement.yaml#/components/schemas/NsacfInfo'
+          minProperties: 1
+        mbSmfInfoList:
+          description: A map (list of key-value pairs) where a (unique) valid JSON string serves as key of MbSmfInfo
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/MbSmfInfo'
+          minProperties: 1
+        tsctsfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/TsctsfInfo'
+          minProperties: 1
+        mbUpfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/MbUpfInfo'
+          minProperties: 1
+        trustAfInfo:
+          $ref: '#/components/schemas/TrustAfInfo'
 
     NFService:
       description: Information of a given NF Service Instance; it is part of the NFProfile of an NF Instance
@@ -1239,19 +1308,23 @@ components:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/ExtSnssai'
           minItems: 1
         allowedOperationsPerNfType:
+          description: A map (list of key-value pairs) where NF Type serves as key
           type: object
           additionalProperties:
             type: array
             items:
               type: string
             minItems: 1
+          minProperties: 1
         allowedOperationsPerNfInstance:
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
           type: object
           additionalProperties:
             type: array
             items:
               type: string
             minItems: 1
+          minProperties: 1
         priority:
           type: integer
           minimum: 0
@@ -1288,14 +1361,18 @@ components:
         vendorId:
           $ref: '#/components/schemas/VendorId'
         supportedVendorSpecificFeatures:
+          description: A map (list of key-value pairs) where IANA-assigned SMI Network Management Private Enterprise Codes serves as key
           type: object
           additionalProperties:
             type: array
             items:
               $ref: '#/components/schemas/VendorSpecificFeature'
+            minItems: 1
           minProperties: 1
         oauth2Required:
           type: boolean
+        perPlmnOauth2ReqList:
+          $ref: '#/components/schemas/PlmnOauth2'
 
     NFType:
       description: NF types known to NRF
@@ -1337,7 +1414,19 @@ components:
             - ICSCF
             - SCSCF
             - DRA
+            - IMS_AS
             - AANF
+            - 5G_DDNMF
+            - NSACF
+            - MFAF
+            - EASDF
+            - DCCF
+            - MB-SMF
+            - TSCTSF
+            - ADRF
+            - GBA_BSF
+            - CEF
+            - MB-UPF
         - type: string
 
     Fqdn:
@@ -1380,16 +1469,19 @@ components:
             - $ref: '#/components/schemas/NfInstanceIdListCond'
             - $ref: '#/components/schemas/NfTypeCond'
             - $ref: '#/components/schemas/ServiceNameCond'
+            - $ref: '#/components/schemas/ServiceNameListCond'
             - $ref: '#/components/schemas/AmfCond'
             - $ref: '#/components/schemas/GuamiListCond'
             - $ref: '#/components/schemas/NetworkSliceCond'
             - $ref: '#/components/schemas/NfGroupCond'
+            - $ref: '#/components/schemas/NfGroupListCond'
             - $ref: '#/components/schemas/NfSetCond'
             - $ref: '#/components/schemas/NfServiceSetCond'
             - $ref: '#/components/schemas/UpfCond'
             - $ref: '#/components/schemas/ScpDomainCond'
             - $ref: '#/components/schemas/NwdafCond'
             - $ref: '#/components/schemas/NefCond'
+            - $ref: '#/components/schemas/DccfCond'
         subscriptionId:
           type: string
           pattern: '^([0-9]{5,6}-)?[^-]+$'
@@ -1488,6 +1580,22 @@ components:
         serviceName:
           $ref: '#/components/schemas/ServiceName'
 
+    ServiceNameListCond:
+      description: Subscription to a set of NFs based on their support for a Service Name in the Servic Name list
+      type: object
+      required:
+        - conditionType
+        - serviceNameList
+      properties:
+        conditionType:
+          type: string
+          enum: [ SERVICE_NAME_LIST_COND ]
+        serviceNameList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceName'
+          minItems: 1
+
     AmfCond:
       description: Subscription to a set of AMFs, based on AMF Set Id and/or AMF Region Id
       type: object
@@ -1541,8 +1649,35 @@ components:
             - UDR
             - PCF
             - CHF
+            - HSS
         nfGroupId:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/NfGroupId'
+
+    NfGroupListCond:
+      description: Subscription to a set of NFs based on their Group Ids
+      type: object
+      required:
+        - conditionType
+        - nfType
+        - nfGroupIdList
+      properties:
+        conditionType:
+          type: string
+          enum: [ NF_GROUP_LIST_COND ]
+        nfType:
+          type: string
+          enum:
+            - UDM
+            - AUSF
+            - UDR
+            - PCF
+            - CHF
+            - HSS
+        nfGroupIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfGroupId'
+          minItems: 1
 
     NotifCondition:
       description: Condition (list of attributes in the NF Profile) to determine whether a notification must be sent by NRF
@@ -1760,6 +1895,11 @@ components:
           minItems: 1
         pgwFqdn:
           $ref: '#/components/schemas/Fqdn'
+        pgwIpAddrList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'
+          minItems: 1
         accessType:
           type: array
           items:
@@ -1772,6 +1912,11 @@ components:
         vsmfSupportInd:
           type: boolean
           default: false
+        pgwFqdnList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Fqdn'
+          minItems: 1
 
     SnssaiSmfInfoItem:
       description: Set of parameters supported by SMF for a given S-NSSAI
@@ -1798,6 +1943,13 @@ components:
           anyOf:
             - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'
             - $ref: 'TS29571_CommonData.yaml#/components/schemas/WildcardDnn'
+        dnaiList:
+          type: array
+          items:
+            anyOf:
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+              - $ref: '#/components/schemas/WildcardDnai'
+          minItems: 1
 
     UpfInfo:
       description: Information of an UPF NF Instance
@@ -1911,6 +2063,12 @@ components:
           items:
             $ref: '#/components/schemas/Ipv6PrefixRange'
           minItems: 1
+        dnaiNwInstanceList:
+          description: Map of network instance per DNAI for the DNN, where the key of the map is the DNAI. When present, the value of each entry of the map shall contain a N6 network instance that is configured for the DNAI indicated by the key.
+          type: object
+          additionalProperties:
+            type: string
+          minProperties: 1
 
     InterfaceUpfInfoItem:
       description: Information of a given IP interface of an UPF
@@ -1944,6 +2102,10 @@ components:
             - N6
             - N9
             - DATA_FORWARDING
+            - N3MB
+            - N6MB
+            - N19MB
+            - NMB9
         - type: string
 
     WAgfInfo:
@@ -2008,6 +2170,9 @@ components:
         v2xSupportInd:
           type: boolean
           default: false
+        proseSupportInd:
+          type: boolean
+          default: false
 
     BsfInfo:
       description: Information of a BSF NF Instance
@@ -2037,6 +2202,18 @@ components:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
         rxDiamRealm:
           $ref: 'TS29571_CommonData.yaml#/components/schemas/DiameterIdentity'
+        groupId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/NfGroupId'
+        supiRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/SupiRange'
+          minItems: 1
+        gpsiRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          minItems: 1
 
     ChfInfo:
       description: Information of a CHF NF Instance
@@ -2106,6 +2283,10 @@ components:
           minItems: 1
         binding:
           type: string
+        acceptedEncoding:
+          type: string
+        supportedFeatures:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/SupportedFeatures'
 
     NfSetCond:
       description: Subscription to a set of NFs based on their Set Id
@@ -2176,6 +2357,21 @@ components:
           items:
             $ref: '#/components/schemas/TaiRange'
           minItems: 1
+        servingNfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
+          minItems: 1
+        servingNfSetIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'
+          minItems: 1
+        mlAnalyticsList:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlAnalyticsInfo'
+          minItems: 1
 
     NefCond:
       description: Subscription to a set of NF Instances (NEFs), identified by Event ID(s) provided by AF, S-NSSAI(s), AF Instance ID, Application Identifier, External Identifier, External Group Identifier, or domain name.
@@ -2186,10 +2382,10 @@ components:
         conditionType:
           type: string
           enum: [ NEF_COND ]
-        eventIds:
+        afEvents:
           type: array
           items:
-            $ref: 'TS29520_Nnwdaf_AnalyticsInfo.yaml#/components/schemas/EventId'
+            $ref: 'TS29517_Naf_EventExposure.yaml#/components/schemas/AfEvent'
           minItems: 1
         snssaiList:
           type: array
@@ -2227,6 +2423,7 @@ components:
             - LOCATION_UPDATE_NOTIFICATION
             - NSSAA_REAUTH_NOTIFICATION
             - NSSAA_REVOC_NOTIFICATION
+            - MATCH_INFO_NOTIFICATION
         - type: string
 
     TransportProtocol:
@@ -2365,10 +2562,13 @@ components:
             - nudm-pp
             - nudm-niddau
             - nudm-mt
+            - nudm-ssau
             - namf-comm
             - namf-evts
             - namf-mt
             - namf-loc
+            - namf-mbs-comm
+            - namf-mbs-bc
             - nsmf-pdusession
             - nsmf-event-exposure
             - nsmf-nidd
@@ -2378,12 +2578,33 @@ components:
             - nnef-pfdmanagement
             - nnef-smcontext
             - nnef-eventexposure
+            - 3gpp-cp-parameter-provisioning
+            - 3gpp-device-triggering
+            - 3gpp-applying-bdt-policy
+            - 3gpp-traffic-influence
+            - 3gpp-chargeable-party
+            - 3gpp-as-session-with-qos
+            - 3gpp-msisdn-less-mo-sms
+            - 3gpp-service-parameter
+            - 3gpp-nidd-configuration-trigger
+            - 3gpp-nidd
+            - 3gpp-analyticsexposure
+            - 3gpp-ecr-control
+            - 3gpp-mo-lcs-notify
+            - 3gpp-time-sync
+            - 3gpp-am-influence
+            - 3gpp-am-policyauthorization
+            - 3gpp-akma
+            - 3gpp-iptvconfiguration
+            - 3gpp-mbs-tmgi
+            - 3gpp-mbs-session
             - npcf-am-policy-control
             - npcf-smpolicycontrol
             - npcf-policyauthorization
             - npcf-bdtpolicycontrol
             - npcf-eventexposure
             - npcf-ue-policy-control
+            - npcf-am-policy-authorization
             - nsmsf-sms
             - nnssf-nsselection
             - nnssf-nssaiavailability
@@ -2397,6 +2618,8 @@ components:
             - nchf-offlineonlycharging
             - nnwdaf-eventssubscription
             - nnwdaf-analyticsinfo
+            - nnwdaf-datamanagement
+            - nnwdaf-mlmodelprovision
             - ngmlc-loc
             - nucmf-provisioning
             - nucmf-uecapabilitymanagement
@@ -2407,12 +2630,30 @@ components:
             - nhss-ims-sdm
             - nhss-ims-uecm
             - nhss-ims-ueau
+            - nhss-gba-sdm
+            - nhss-gba-ueau
             - nsepp-telescopic
             - nsoraf-sor
             - nspaf-secured-packet
             - nudsf-dr
+            - nudsf-timer
             - nnssaaf-nssaa
             - naanf-akma
+            - n5gddnmf-discovery
+            - nmfaf-3dadm
+            - nmfaf-3cadm
+            - neasdf-dnscontext
+            - neasdf-baselinednspattern
+            - ndccf-dm
+            - ndccf-cm
+            - nnsacf-nsac
+            - nnsacf-slice-ee
+            - nmbsmf-tmgi
+            - nmbsmf-mbssession
+            - nadrf-dm
+            - nbsp-gba
+            - ntsctsf-time-sync
+            - ntsctsf-qos-tscai
         - type: string
 
     N2InterfaceAmfInfo:
@@ -2490,195 +2731,368 @@ components:
       type: object
       properties:
         servedUdrInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/UdrInfo'
+            anyOf:
+              - $ref: '#/components/schemas/UdrInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedUdrInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/UdrInfo'
+              anyOf:
+                - $ref: '#/components/schemas/UdrInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedUdmInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/UdmInfo'
+            anyOf:
+              - $ref: '#/components/schemas/UdmInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedUdmInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/UdmInfo'
+              anyOf:
+                - $ref: '#/components/schemas/UdmInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedAusfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/AusfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/AusfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedAusfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/AusfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/AusfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedAmfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/AmfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/AmfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedAmfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/AmfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/AmfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedSmfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/SmfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/SmfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedSmfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/SmfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/SmfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedUpfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/UpfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/UpfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedUpfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/UpfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/UpfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedPcfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/PcfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/PcfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedPcfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/PcfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/PcfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedBsfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/BsfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/BsfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedBsfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/BsfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/BsfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedChfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/ChfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/ChfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedChfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/ChfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/ChfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedNefInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/NefInfo'
+            anyOf:
+              - $ref: '#/components/schemas/NefInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedNwdafInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/NwdafInfo'
+            anyOf:
+              - $ref: '#/components/schemas/NwdafInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
-        servedPcscfInfoList:
+        servedNwdafInfoList:
           type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
           additionalProperties:
             type: object
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             additionalProperties:
-              $ref: '#/components/schemas/PcscfInfo'
+              $ref: '#/components/schemas/NwdafInfo'
+            minProperties: 1
+          minProperties: 1
+        servedPcscfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
+          type: object
+          additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
+            type: object
+            additionalProperties:
+              anyOf:
+                - $ref: '#/components/schemas/PcscfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedGmlcInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/GmlcInfo'
+            anyOf:
+              - $ref: '#/components/schemas/GmlcInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedLmfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/LmfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/LmfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedNfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
             $ref: '#/components/schemas/NfInfo'
           minProperties: 1
         servedHssInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/HssInfo'
+              anyOf:
+                - $ref: '#/components/schemas/HssInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedUdsfInfo:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/UdsfInfo'
+            anyOf:
+              - $ref: '#/components/schemas/UdsfInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedUdsfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             type: object
             additionalProperties:
-              $ref: '#/components/schemas/UdsfInfo'
+              anyOf:
+                - $ref: '#/components/schemas/UdsfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
             minProperties: 1
           minProperties: 1
         servedScpInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/ScpInfo'
+            anyOf:
+              - $ref: '#/components/schemas/ScpInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedSeppInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/SeppInfo'
+            anyOf:
+              - $ref: '#/components/schemas/SeppInfo'
+              - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
           minProperties: 1
         servedAanfInfoList:
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
           type: object
-          description: A map(list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
+            type: object
+            additionalProperties:
+              anyOf:
+                - $ref: '#/components/schemas/AanfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
+            minProperties: 1
+        served5gDdnmfInfo:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/5GDdnmfInfo'
+          minProperties: 1
+        servedMfafInfoList:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/MfafInfo'
+          minProperties: 1
+        servedEasdfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
           additionalProperties:
             type: object
-            description: A map(list of key-value pairs) where a valid JSON string serves as key
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
             additionalProperties:
-              $ref: '#/components/schemas/AanfInfo'
+              $ref: '#/components/schemas/EasdfInfo'
             minProperties: 1
+        servedDccfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/DccfInfo'
+          minProperties: 1
+        servedMbSmfInfoList:
+          description: A map (list of key-value pairs) where nfInstanceId serves as key
+          type: object
+          additionalProperties:
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
+            type: object
+            additionalProperties:
+              anyOf:
+                - $ref: '#/components/schemas/MbSmfInfo'
+                - $ref: 'TS29571_CommonData.yaml#/components/schemas/EmptyObject'
+            minProperties: 1
+          minProperties: 1
+        servedTsctsfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            type: object
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
+            additionalProperties:
+              $ref: '#/components/schemas/TsctsfInfo'
+            minProperties: 1
+          minProperties: 1
+        servedMbUpfInfoList:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            type: object
+            description: A map (list of key-value pairs) where a valid JSON string serves as key
+            additionalProperties:
+              $ref: '#/components/schemas/MbUpfInfo'
+            minProperties: 1
+          minProperties: 1
+        servedTrustAfInfo:
+          type: object
+          description: A map (list of key-value pairs) where NF Instance Id serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/TrustAfInfo'
+          minProperties: 1
 
     PlmnSnssai:
       description: List of network slices (S-NSSAIs) for a given PLMN ID
@@ -2722,6 +3136,26 @@ components:
           items:
             type: string
           minItems: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+        dnaiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+          minItems: 1
+        afSliceDnnList:
+          type: array
+          items:
+            $ref: '#/components/schemas/AfSliceDnn'
+          minItems: 1
 
     PfdData:
       description: List of Application IDs and/or AF IDs managed by a given NEF Instance
@@ -2762,6 +3196,25 @@ components:
           items:
             $ref: '#/components/schemas/TaiRange'
           minItems: 1
+        nwdafCapability:
+          $ref: '#/components/schemas/NwdafCapability'
+        analyticsDelay:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/DurationSec'
+        servingNfSetIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'
+          minItems: 1
+        servingNfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
+          minItems: 1
+        mlAnalyticsList:
+          type: array
+          items:
+            $ref: '#/components/schemas/MlAnalyticsInfo'
+          minItems: 1
 
     LmfInfo:
       description: Information of an LMF NF Instance
@@ -2789,6 +3242,21 @@ components:
           items:
             $ref: 'TS29571_CommonData.yaml#/components/schemas/RatType'
           minItems: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+        supportedGADShapes:
+          type: array
+          items:
+            $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/SupportedGADShapes'
+          minItems: 1
 
     GmlcInfo:
       description: Information of a GMLC NF Instance
@@ -2798,6 +3266,12 @@ components:
           type: array
           items:
             $ref: 'TS29572_Nlmf_Location.yaml#/components/schemas/ExternalClientType'
+          minItems: 1
+        gmlcNumbers:
+          type: array
+          items:
+            type: string
+            pattern: '^[0-9]{5,15}$'
           minItems: 1
 
     AfEventExposureData:
@@ -2892,6 +3366,11 @@ components:
           items:
             $ref: '#/components/schemas/IdentityRange'
           minItems: 1
+        externalGroupIdentifiersRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          minItems: 1
 
     ImsiRange:
       description: A range of IMSIs (subscriber identities), either based on a numeric range, or based on regular-expression matching
@@ -2975,14 +3454,15 @@ components:
       type: object
       properties:
         scpDomainInfoList:
+          description: A map (list of key-value pairs) where the key of the map shall be the string identifying an SCP domain
           type: object
           additionalProperties:
-            items:
-              $ref: '#/components/schemas/ScpDomainInfo'
+            $ref: '#/components/schemas/ScpDomainInfo'
           minProperties: 1
         scpPrefix:
           type: string
         scpPorts:
+          description: Port numbers for HTTP and HTTPS. The key of the map shall be "http" or "https"
           type: object
           additionalProperties:
             type: integer
@@ -3026,6 +3506,10 @@ components:
           minItems: 1
         ipReachability:
           $ref: '#/components/schemas/IpReachability'
+        scpCapabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScpCapability'
 
     ScpDomainInfo:
       description: SCP Domain specific information
@@ -3041,6 +3525,7 @@ components:
         scpPrefix:
           type: string
         scpPorts:
+          description: Port numbers for HTTP and HTTPS. The key of the map shall be "http" or "https"
           type: object
           additionalProperties:
             type: integer
@@ -3051,11 +3536,18 @@ components:
     ScpDomainCond:
       description: Subscription to a set of NF or SCP or SEPP instances belonging to certain SCP domains
       type: object
+      required:
+        - scpDomains
       properties:
         scpDomains:
           type: array
           items:
             type: string
+          minItems: 1
+        nfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
           minItems: 1
 
     OptionsResponse:
@@ -3119,6 +3611,7 @@ components:
         - type: string
 
     UriList:
+      description: Represents a set of URIs following the 3GPP hypermedia format (containing a "_links" attribute).
       type: object
       properties:
         _links:
@@ -3131,6 +3624,7 @@ components:
           type: integer
 
     AanfInfo:
+      description: Represents the information relative to an AAnF NF Instance.
       type: object
       properties:
         routingIndicators:
@@ -3138,4 +3632,508 @@ components:
           items:
             type: string
             pattern: '^[0-9]{1,4}$'
+          minItems: 1
+
+    5GDdnmfInfo:
+      description: Information of an 5G DDNMF NF Instance
+      type: object
+      required:
+        - plmnId
+      properties:
+        plmnId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'
+
+    WildcardDnai:
+      description: Wildcard DNAI
+      type: string
+      pattern: '^[*]$'
+
+    MfafInfo:
+      description: Information of a MFAF NF Instance
+      type: object
+      properties:
+        servingNfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
+          minItems: 1
+        servingNfSetIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'
+          minItems: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+
+    NwdafCapability:
+      description: Indicates the capability supported by the NWDAF
+      type: object
+      properties:
+        analyticsAggregation:
+          type: boolean
+          default: false
+        analyticsMetadataProvisioning:
+          type: boolean
+          default: false
+
+    EasdfInfo:
+      description: Information of an EASDF NF Instance
+      type: object
+      properties:
+        sNssaiEasdfInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SnssaiEasdfInfoItem'
+          minItems: 1
+        easdfN6IpAddressList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'
+          minItems: 1
+        upfN6IpAddressList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/IpAddr'
+          minItems: 1
+
+    SnssaiEasdfInfoItem:
+      description: Set of parameters supported by EASDF for a given S-NSSAI
+      type: object
+      required:
+        - sNssai
+        - dnnEasdfInfoList
+      properties:
+        sNssai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/ExtSnssai'
+        dnnEasdfInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnnEasdfInfoItem'
+          minItems: 1
+
+    DnnEasdfInfoItem:
+      description: Set of parameters supported by EASDF for a given DNN
+      type: object
+      required:
+        - dnn
+      properties:
+        dnn:
+          anyOf:
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/WildcardDnn'
+        dnaiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnai'
+          minItems: 1
+
+    DccfInfo:
+      description: Information of a DCCF NF Instance
+      type: object
+      properties:
+        servingNfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
+          minItems: 1
+        servingNfSetIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'
+          minItems: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+
+    ScpCapability:
+      description: Indicates the capabilities supported by an SCP
+      anyOf:
+        - type: string
+          enum:
+            - INDIRECT_COM_WITH_DELEG_DISC
+        - type: string
+
+    NsacfInfo:
+      description: Information of a NSACF NF Instance
+      type: object
+      required:
+        - nsacfCapability
+      properties:
+        nsacfCapability:
+          $ref: '#/components/schemas/NsacfCapability'
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+
+    NsacfCapability:
+      type: object
+      properties:
+        supportUeSAC:
+          description: >
+            Indicates the service capability of the NSACF to monitor and control the number of registered UEs per network slice for the network slice that is subject to NSAC
+            true: Supported
+            false (default): Not Supported
+          type: boolean
+          default: false
+        supportPduSAC:
+          description: >
+            Indicates the service capability of the NSACF to monitor and control the number of established PDU sessions per network slice for the network slice that is subject to NSAC
+            true: Supported
+            false (default): Not Supported
+          type: boolean
+          default: false
+
+    DccfCond:
+      description: Subscription to a set of NF Instances (DCCFs), identified by NF types, NF Set Id(s) or DCCF Serving Area information, i.e. list of TAIs served by the DCCF.
+      type: object
+      required:
+        - conditionType
+      properties:
+        conditionType:
+          type: string
+          enum: [ DCCF_COND ]
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+        servingNfTypeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/NFType'
+          minItems: 1
+        servingNfSetIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/NfSetId'
+          minItems: 1
+
+    MlAnalyticsInfo:
+      description: ML Analytics Filter information supported by the Nnwdaf_MLModelProvision service
+      type: object
+      properties:
+        mlAnalyticsIds:
+          type: array
+          items:
+            $ref: 'TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent'
+          minItems: 1
+        snssaiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Snssai'
+          minItems: 1
+        trackingAreaList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+
+    MbSmfInfo:
+      description: Information of an MB-SMF NF Instance
+      type: object
+      properties:
+        sNssaiInfoList:
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/SnssaiMbSmfInfoItem'
+          minProperties: 1
+        tmgiRangeList:
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/TmgiRange'
+          minProperties: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+        mbsSessionList:
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/MbsSession'
+          minProperties: 1
+
+    TmgiRange:
+      description: Range of TMGIs
+      type: object
+      required:
+        - mbsServiceIdStart
+        - mbsServiceIdEnd
+        - plmnId
+      properties:
+        mbsServiceIdStart:
+          type: string
+          pattern: '^[A-Fa-f0-9]{6}$'
+        mbsServiceIdEnd:
+          type: string
+          pattern: '^[A-Fa-f0-9]{6}$'
+        plmnId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'
+        nid:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/Nid'
+
+    MbsSession:
+      description: MBS Session currently served by an MB-SMF
+      type: object
+      required:
+        - mbsSessionId
+      properties:
+        mbsSessionId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/MbsSessionId'
+        mbsAreaSessions:
+          description: A map (list of key-value pairs) where the key identifies an areaSessionId
+          additionalProperties:
+            $ref: '#/components/schemas/MbsAreaSession'
+          minProperties: 1
+
+    SnssaiMbSmfInfoItem:
+      description: Parameters supported by an MB-SMF for a given S-NSSAI
+      type: object
+      required:
+        - sNssai
+        - dnnInfoList
+      properties:
+        sNssai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/ExtSnssai'
+        dnnInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnnMbSmfInfoItem'
+          minItems: 1
+
+    DnnMbSmfInfoItem:
+      description: Parameters supported by an MB-SMF for a given DNN
+      type: object
+      required:
+        - dnn
+      properties:
+        dnn:
+          anyOf:
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/WildcardDnn'
+
+    MbsAreaSession:
+      description: MBS Session in a specific MBS Service Area
+      type: object
+      required:
+        - areaSessionId
+        - mbsServiceArea
+      properties:
+        areaSessionId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/AreaSessionId'
+        mbsServiceArea:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/MbsServiceArea'
+
+    TsctsfInfo:
+      description: Information of a TSCTSF NF Instance
+      type: object
+      properties:
+        sNssaiInfoList:
+          description: A map (list of key-value pairs) where a valid JSON string serves as key
+          additionalProperties:
+            $ref: '#/components/schemas/SnssaiTsctsfInfoItem'
+          minProperties: 1
+        externalGroupIdentifiersRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/IdentityRange'
+          minItems: 1
+
+    SnssaiTsctsfInfoItem:
+      description: Set of parameters supported by TSCTSF for a given S-NSSAI
+      type: object
+      required:
+        - sNssai
+        - dnnInfoList
+      properties:
+        sNssai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/ExtSnssai'
+        dnnInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnnTsctsfInfoItem'
+          minItems: 1
+
+    DnnTsctsfInfoItem:
+      description: Parameters supported by an TSCTSF for a given DNN
+      type: object
+      required:
+        - dnn
+      properties:
+        dnn:
+          anyOf:
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/WildcardDnn'
+
+    MbUpfInfo:
+      description: Information of an MB-UPF NF Instance
+      type: object
+      required:
+        - sNssaiMbUpfInfoList
+      properties:
+        sNssaiMbUpfInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SnssaiUpfInfoItem'
+          minItems: 1
+        mbSmfServingArea:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        interfaceMbUpfInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterfaceUpfInfoItem'
+          minItems: 1
+        taiList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/Tai'
+          minItems: 1
+        taiRangeList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaiRange'
+          minItems: 1
+        priority:
+          type: integer
+          minimum: 0
+          maximum: 65535
+        supportedPfcpFeatures:
+          type: string
+
+    AfSliceDnn:
+      description: AF specific Slices and Dnns
+      type: object
+      required:
+        - afId
+      properties:
+        afId:
+          type: string
+        sNssaiInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SnssaiInfoItem'
+          minItems: 1
+
+    TrustAfInfo:
+      description: Information of a trusted AF Instance
+      type: object
+      properties:
+        sNssaiInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SnssaiInfoItem'
+          minItems: 1
+        afEvents:
+          type: array
+          items:
+            $ref: 'TS29517_Naf_EventExposure.yaml#/components/schemas/AfEvent'
+          minItems: 1
+        appIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        internalGroupId:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/GroupId'
+          minItems: 1
+
+    SnssaiInfoItem:
+      description: Parameters supported by an NF for a given S-NSSAI Set of parameters supported by NF for a given S-NSSAI
+      type: object
+      required:
+        - sNssai
+        - dnnInfoList
+      properties:
+        sNssai:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/ExtSnssai'
+        dnnInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnnInfoItem'
+          minItems: 1
+
+    DnnInfoItem:
+      description: Set of parameters supported by NF for a given DNN
+      type: object
+      required:
+        - dnn
+      properties:
+        dnn:
+          anyOf:
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/Dnn'
+            - $ref: 'TS29571_CommonData.yaml#/components/schemas/WildcardDnn'
+
+    CollocatedNfInstance:
+      description: Information of an collocated NF Instance registered in the NRF
+      type: object
+      required:
+        - nfInstanceId
+        - nfType
+      properties:
+        nfInstanceId:
+          $ref: 'TS29571_CommonData.yaml#/components/schemas/NfInstanceId'
+        nfType:
+          $ref: '#/components/schemas/CollocatedNfType'
+
+    CollocatedNfType:
+      description: NF types for a collocated NF
+      anyOf:
+        - type: string
+          enum:
+            - UPF
+            - SMF
+            - MB-UPF
+            - MB-SMF
+        - type: string
+
+    PlmnOauth2:
+      description: Oauth2.0 required indication for a given PLMN ID
+      type: object
+      properties:
+        oauth2RequiredPlmnIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'
+          minItems: 1
+        oauth2NotRequiredPlmnIdList:
+          type: array
+          items:
+            $ref: 'TS29571_CommonData.yaml#/components/schemas/PlmnId'
           minItems: 1
